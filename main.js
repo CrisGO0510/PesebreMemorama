@@ -166,6 +166,9 @@ function cerrarModal() {
 // Función para abrir la ventana modal, siendo la variable texto el mensaje que irá a la derecha
 
 function abrirModal(texto) {
+    if (ending == 8) {
+        document.getElementById('btn-cerrar').setAttribute('value', "Finalizar")
+    }
     audiointro.pause();
     document.querySelector('.content-modal').classList.remove('fade-in-up');
     document.getElementById("modal_texto").textContent = texto;
@@ -274,6 +277,7 @@ function cerrarModalFinal() {
         document.getElementById("final-contenedor").style.display = "none";
         document.getElementById('container-final').classList.remove('fade-in-up');
     }, 1000);
+    document.getElementById('btn-cerrar').setAttribute('value', "Continuar");
 }
 
 // Función para refrescar la pantalla y dirigirla al punto origen
