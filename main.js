@@ -186,7 +186,7 @@ function caida(x) {
 
 function erase(x) {
     let personaje = document.getElementById(`${x}`)
-    personaje.style.display = "none";
+    personaje.classList.add("disnone");
 }
 
 // Función cuando se gana
@@ -278,6 +278,18 @@ function cerrarModalFinal() {
         document.getElementById('container-final').classList.remove('fade-in-up');
     }, 1000);
     document.getElementById('btn-cerrar').setAttribute('value', "Continuar");
+}
+
+// Función para agregarle la silueta a los personajes
+
+function silueta() {
+    let sil = ['baltazar', 'gaspar', 'melchor', 'pastor', 'jose', 'maria', 'jesus', 'mula-buey'];
+    sil.map((nombre)=>{
+        let personaje = document.getElementById(`${nombre}`);
+        console.log(nombre);
+        personaje.classList.remove("disnone");
+        console.log(personaje);
+    });
 }
 
 // Función para refrescar la pantalla y dirigirla al punto origen
