@@ -4,6 +4,16 @@ let background = document.querySelector('.background');
 let popup = document.querySelector('.pop-up');
 let body = document.querySelector('body');
 let audiointro = document.querySelector('#audio-intro');
+let correcta = document.querySelector('#correcta');
+let incorrecta = document.querySelector('#incorrecta');
+let pair1 = document.querySelector('#pair1');
+let pair2 = document.querySelector('#pair2');
+let pair3 = document.querySelector('#pair3');
+let pair4 = document.querySelector('#pair4');
+let pair5 = document.querySelector('#pair5');
+let pair6 = document.querySelector('#pair6');
+let pair7 = document.querySelector('#pair7');
+let pair8 = document.querySelector('#pair8');
 var ending = 0;
 
 // event for the modal intro
@@ -78,35 +88,44 @@ const deselectcard = (selections) => {
             let card1 = document.querySelector('#card'+selections[1]);
             card0.style.transform = "rotateY(0deg)";
             card1.style.transform = "rotateY(0deg)";
+            incorrecta.play();
         } else {
+            correcta.play();
             let comprobar = rear0.innerHTML;
             console.log(comprobar);
             if (comprobar == '<img src="./img/parejas-001.png">') {
                 ending += 1;
+                pair1.play();
                 personNum(1);
             } else if (comprobar == '<img src="./img/parejas-002.png">') {
                 ending += 1;
+                pair2.play();
                 personNum(2);
             } else if (comprobar == '<img src="./img/parejas-003.png">') {
                 ending += 1;
+                pair3.play();
                 personNum(3);
             } else if (comprobar == '<img src="./img/parejas-004.png">') {
                 ending += 1;
+                pair4.play();
                 personNum(4);
             } else if (comprobar == '<img src="./img/parejas-005.png">') {
                 ending += 1;
+                pair5.play();
                 personNum(5);
             } else if (comprobar == '<img src="./img/parejas-006.png">') {
                 ending += 1;
+                pair6.play();
                 personNum(6);
             } else if (comprobar == '<img src="./img/parejas-007.png">') {
                 ending += 1;
+                pair7.play();
                 personNum(7);
             } else if (comprobar == '<img src="./img/parejas-008.png">') {
                 ending += 1;
+                pair8.play();
                 personNum(8);
             }
-            
         }
     }, 1000);
 }
@@ -124,6 +143,7 @@ function cerrarModal() {
     }, 1000);
     if (ending == 8) {
         ending = 0;
+        final.play().
         abrirModalFinal();
     }
 }
