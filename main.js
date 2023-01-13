@@ -143,7 +143,7 @@ function cerrarModal() {
     }, 1000);
     if (ending == 8) {
         ending = 0;
-        final.play().
+        final.play();
         abrirModalFinal();
     }
 }
@@ -151,6 +151,7 @@ function cerrarModal() {
 // Función para abrir la ventana modal, siendo la variable texto el mensaje que irá a la derecha
 
 function abrirModal(texto) {
+    document.querySelector('.content-modal').classList.remove('fade-in-up');
     document.getElementById("modal_texto").textContent = texto;
     document.getElementById("contenedor").style.display = "flex";
 }
@@ -247,4 +248,14 @@ function personNum(x) {
 
 function abrirModalFinal() {
     document.getElementById("final-contenedor").style.display = "flex";
+}
+
+// Función para refrescar la pantalla y dirigirla al punto origen
+
+function refrescar() {
+      location.reload();
+}
+
+function scrollToTop() {
+    window.scrollTo(0,0);
 }
