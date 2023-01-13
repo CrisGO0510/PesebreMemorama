@@ -16,6 +16,71 @@
 
 <body class="body">
     <!-- modal intro -->
+    <!-- Ventana modal -->
+    <div class="dialog-modal" id="contenedor"> <!-- Div para la parte exterior de la ventana -->
+        <div class="container-modal"> <!-- Contenedor de la ventana modal -->
+            <div class="content-modal fade-in-down"> <!-- Ventana -->
+                <div class="content-column"> <!-- Contenedor de columnas -->
+                    <div class="column1"> <!-- Columna que tendrá la pesebre y sus personajes -->
+                        <!-- Imagenes de los personajes -->
+                        <img src="img/baltazar.png" id="baltazar">
+                        <img src="img/gaspar.png" id="gaspar">
+                        <img src="img/melchor.png" id="melchor">
+                        <img src="img/pastor.png" id="pastor">
+                        <img src="img/jose.png" id="jose">
+                        <img src="img/maria.png" id="maria">
+                        <img src="img/jesus.png" id="jesus">
+                        <img src="img/mula-buey.png" id="mula-buey">
+                    </div>
+                    <div class="column2"> <!-- Columna que tendrá el texto de la ventana -->
+                        <h2 id="modal_titulo">Sabias que...</h2>
+                        <div id="modal_texto">
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Et veritatis similique illum
+                                illo labore laboriosam magnam id repellendus voluptatibus facilis, minima dolor
+                                reiciendis neque nostrum sapiente eveniet cumque recusandae quidem?</p>
+                        </div>
+                        <img src="img/copo.png" class="copo1">
+                        <img src="img/copo.png" class="copo2">
+                        <input type="submit" id="btn-cerrar" onclick="cerrarModal()" value="Continuar">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Fin de ventana modal -->
+
+    <!-- Ventana modal del final -->
+    <div class="final-modal fade-in" id="final-contenedor"> <!-- Div para la parte exterior de la ventana -->
+        <div class="container-modal"> <!-- Contenedor de la ventana modal -->
+            <div class="content-modal fade-in-down"> <!-- Ventana -->
+                <div class="content-windown"> <!-- Contenedor de columnas -->
+                    <div class="column1"></div> <!-- Columna que tendrá la imagen del pesebre-->
+                    <div class="column2"> <!-- Columna que tendrá el texto de la ventana -->
+                        <h2 class="final_modal_titulo">Armaste tu pesebre</h2>
+                        <div class="win_text">
+                            <p>Y junto con la esperanza de la llegada del Niño Dios te deseamos de todo corazón que ese
+                                regalo que tanto has anhelado llegue a ti en esta navidad.</p>
+                            <p>Felices fiestas te desea:</p>
+                            <img class="img-escuela" src="./img/logoEscuelDidactica.png">
+                        </div>
+                        <input type="submit" id="btn-reiniciar" onclick="gamegenerate()" value="Volver a intentar">
+                        <!-- Ingresar el volver a intentar -->
+                    </div>
+                </div>
+                <div class="footer_ventana"> <!-- Contiene el pie de la ventana y sus iconos -->
+                    <div class="footer_ventana_redes">Compartir</div>
+                    <a href="#" target="_blank" class="btn.twitter"><img src="./img/twitter.svg"
+                            title="Compartir en twitter"></a>
+                    <a href="#" target="_blank" class="btn.twitter"><img src="./img/facebook.svg"
+                            title="Compartir en facebook"></a>
+                    <a href="#" target="_blank" class="btn.twitter"><img src="./img/linkedin.svg"
+                            title="Compartir en linkedin"></a>
+                    <img src="./img/link.svg" title="Compartir en Linkedin">
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Fin de ventana modal -->
     <audio id="audio-intro" src="./audio/intro.mp3"></audio>
     <div class="background"></div>
     <div class="pop-up">
@@ -85,7 +150,8 @@
             <!-- footer for screens mayor than 769px -->
             <footer class="footer-desktop">
                 <div class="text">
-                    <span>Somos <img src="./img/logoEscuelDidactica.png">y te ayudamos a transformar el aprendizaje en experiencia memorables.</span>
+                    <span>Somos <img src="./img/logoEscuelDidactica.png">y te ayudamos a transformar el aprendizaje en
+                        experiencia memorables.</span>
                 </div>
 
                 <div class="networks">
