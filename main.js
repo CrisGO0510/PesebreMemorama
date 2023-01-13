@@ -134,10 +134,25 @@ const deselectcard = (selections) => {
 
 // modal final details
 
+// Función para para el audio
+
+function stopper() {
+    correcta.pause();
+    incorrecta.pause();
+    pair1.pause();
+    pair2.pause();
+    pair3.pause();
+    pair4.pause();
+    pair5.pause();
+    pair6.pause();
+    pair7.pause();
+    pair8.pause();
+}
+
 // Función para cerrar la ventana modal
 
 function cerrarModal() {
-    document.querySelector('.content-modal').classList.add('fade-in-up')
+    document.querySelector('.content-modal').classList.add('fade-in-up');
     setTimeout(() => {
         document.getElementById("contenedor").style.display = "none";
     }, 1000);
@@ -151,6 +166,7 @@ function cerrarModal() {
 // Función para abrir la ventana modal, siendo la variable texto el mensaje que irá a la derecha
 
 function abrirModal(texto) {
+    audiointro.pause();
     document.querySelector('.content-modal').classList.remove('fade-in-up');
     document.getElementById("modal_texto").textContent = texto;
     document.getElementById("contenedor").style.display = "flex";
@@ -253,9 +269,10 @@ function abrirModalFinal() {
 // Función para refrescar la pantalla y dirigirla al punto origen
 
 function refrescar() {
-      location.reload();
+    location.reload();
+    location.reload();
 }
 
-function scrollToTop() {
-    window.scrollTo(0,0);
+window.onbeforeunload = function () {
+    window.scrollTo(0, 0);
 }
