@@ -1,3 +1,5 @@
+/* Configuraciones globales */
+
 * {
     margin: 0;
     padding: 0;
@@ -16,10 +18,11 @@ body {
 
 #global {
     width: 100vw;
-    background-image: url(../img/pattern.png);
+    background-image: url(img/pattern.png);
 }
 
-/* styles for modal intro */
+/* Ventana modal para la intro */
+
 .background {
     transition-property: opacity;
     transition-duration: 1s;
@@ -211,7 +214,9 @@ body {
     }
 }
 
-/* header */
+/* Fin de ventana modal para la intro */
+
+/* Estilos para header */
 header {
     display: flex;
     align-items: center;
@@ -242,7 +247,9 @@ header img {
     padding: 18px;
 }
 
-/* styles for game content */
+/* Fin del header */
+
+/* Estilos para el contenido del juego */
 .background-game {
     width: 100vw;
     background-color: #efc869;
@@ -305,7 +312,10 @@ header img {
     }
 }
 
-/* inicio del contenido del pie de pagina */
+/* Fin de estilo para el contenido del juego */
+
+/* Inicio del contenido del pie de pagina */
+
 @media (min-width: 769px) {
     .footer-movil,
     .links_fixed-movil {
@@ -502,6 +512,8 @@ header img {
     }
 }
 
+/* Fin del footer */
+/* &&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&& */
 /* final modals */
 
 .dialog-modal{

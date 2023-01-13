@@ -194,7 +194,7 @@ function win() {
 
 }
 
-// Eñ setTimeOut es para darle tiempo al programa para que cargue la animación antes de ocultar la imagen 
+// El setTimeOut es para darle tiempo al programa para que cargue la animación antes de ocultar la imagen 
 
 function personNum(x) {
     switch (x) {
@@ -256,7 +256,7 @@ function personNum(x) {
             break;   
         default:
             console.log("Error en el switch de person");
-            break;
+            break;1
     }
 }
 
@@ -264,6 +264,16 @@ function personNum(x) {
 
 function abrirModalFinal() {
     document.getElementById("final-contenedor").style.display = "flex";
+}
+
+// Función para cerrar la ventana modal final
+
+function cerrarModalFinal() {
+    document.getElementById('container-final').classList.add('fade-in-up');
+    setTimeout(() => {
+        document.getElementById("final-contenedor").style.display = "none";
+        document.getElementById('container-final').classList.remove('fade-in-up');
+    }, 1000);
 }
 
 // Función para refrescar la pantalla y dirigirla al punto origen
