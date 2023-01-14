@@ -179,14 +179,14 @@ function abrirModal(texto) {
 
 function caida(x) {
     let personaje = document.getElementById(`${x}`)
-    personaje.classList.add('showItem');
+    personaje.classList.add("showItem")
 }
 
 // Función para borrar un personaje, siendo x el nombre entre comillas
 
 function erase(x) {
     let personaje = document.getElementById(`${x}`)
-    personaje.classList.add("disnone");
+    personaje.style.display = "none";
 }
 
 // Función cuando se gana
@@ -197,7 +197,7 @@ function win() {
 
 }
 
-// El setTimeOut es para darle tiempo al programa para que cargue la animación antes de ocultar la imagen 
+/* La función persona realiza una comparación mediante el parametro e identifica cual personaje es, una vez hallado abre una ventana modal con el mensaje propio de dicho personaje (parametro de abrirModal().), ejecuta la animacion de caida (caida().), hace que dicho elemento se oculte (erase(). ) y remueve la animación anterior para evitar errores fututros*/
 
 function personNum(x) {
     switch (x) {
@@ -206,6 +206,7 @@ function personNum(x) {
             caida("maria");
             setTimeout(() => {
                 erase("maria");
+                document.getElementById("maria").classList.remove("showItem");
             }, 5000);
             break;
         case 2:
@@ -213,6 +214,7 @@ function personNum(x) {
             caida("jose");
             setTimeout(() => {
                 erase("jose");
+                document.getElementById("jose").classList.remove("showItem");
             }, 5000);
             break;
         case 3:
@@ -220,6 +222,7 @@ function personNum(x) {
             caida("jesus");
             setTimeout(() => {
                 erase("jesus");
+                document.getElementById("jesus").classList.remove("showItem");
             }, 5000);
             break;
         case 4:
@@ -227,6 +230,7 @@ function personNum(x) {
             caida("melchor");
             setTimeout(() => {
                 erase("melchor");
+                document.getElementById("melchor").classList.remove("showItem");
             }, 5000);
             break;
         case 5:
@@ -234,6 +238,7 @@ function personNum(x) {
             caida("gaspar");
             setTimeout(() => {
                 erase("gaspar");
+                document.getElementById("gaspar").classList.remove("showItem");
             }, 5000);
             break;
         case 6:
@@ -241,6 +246,7 @@ function personNum(x) {
             caida("baltazar");
             setTimeout(() => {
                 erase("baltazar");
+                document.getElementById("baltazar").classList.remove("showItem");
             }, 5000);
             break;
         case 7:
@@ -248,6 +254,7 @@ function personNum(x) {
             caida("pastor");
             setTimeout(() => {
                 erase("pastor");
+                document.getElementById("pastor").classList.remove("showItem");
             }, 5000);
             break;
         case 8:
@@ -255,11 +262,12 @@ function personNum(x) {
             caida("mula-buey");
             setTimeout(() => {
                 erase("mula-buey");
+                document.getElementById("mula-buey").classList.remove("showItem");
             }, 5000);
             break;   
         default:
             console.log("Error en el switch de person");
-            break;1
+            break;
     }
 }
 
@@ -276,6 +284,7 @@ function cerrarModalFinal() {
     setTimeout(() => {
         document.getElementById("final-contenedor").style.display = "none";
         document.getElementById('container-final').classList.remove('fade-in-up');
+        silueta();
     }, 1000);
     document.getElementById('btn-cerrar').setAttribute('value', "Continuar");
 }
@@ -283,13 +292,14 @@ function cerrarModalFinal() {
 // Función para agregarle la silueta a los personajes
 
 function silueta() {
-    let sil = ['baltazar', 'gaspar', 'melchor', 'pastor', 'jose', 'maria', 'jesus', 'mula-buey'];
-    sil.map((nombre)=>{
-        let personaje = document.getElementById(`${nombre}`);
-        console.log(nombre);
-        personaje.classList.remove("disnone");
-        console.log(personaje);
-    });
+    document.getElementById("maria").style.display = "block";
+    document.getElementById("jose").style.display = "block";
+    document.getElementById("jesus").style.display = "block";
+    document.getElementById("melchor").style.display = "block";
+    document.getElementById("gaspar").style.display = "block";
+    document.getElementById("baltazar").style.display = "block";
+    document.getElementById("pastor").style.display = "block";
+    document.getElementById("mula-buey").style.display = "block";
 }
 
 // Función para refrescar la pantalla y dirigirla al punto origen
