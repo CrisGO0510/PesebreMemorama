@@ -1,8 +1,14 @@
-// variables for modal intro
+/* Variables para conseguir acceso al DOM, las siguientes variables se usaran para cambiarle los estilos a algunas etiquetas e iniciar la ejecucion del cierre del modal: */
+// acceso para el boton de comenzar del modal de inicio.
 let button = document.querySelector('.button');
+// acceso para esconder el fondo del modal de inicio.
 let background = document.querySelector('.background');
+// acceso a la imagen del modal de inicio.
 let popup = document.querySelector('.pop-up');
+// acceso al body para posteriormente añadirle una clase y que adopte unos estilos. 
 let body = document.querySelector('body');
+
+/* audios que sonaran a partir de ciertas acciones que ocurren en el programa: */
 let audiointro = document.querySelector('#audio-intro');
 let correcta = document.querySelector('#correcta');
 let incorrecta = document.querySelector('#incorrecta');
@@ -14,18 +20,23 @@ let pair5 = document.querySelector('#pair5');
 let pair6 = document.querySelector('#pair6');
 let pair7 = document.querySelector('#pair7');
 let pair8 = document.querySelector('#pair8');
+
+/* contador, usado para determinar cuando termino el juego, ademas de reiniciar su valor cuando se reinicia el juego: */
 var ending = 0;
 
-// event for the modal intro
+/* Espera de Evento para ocultar el modal de inicio, o modal intro: */
 button.addEventListener('click',() => {
+    // oculta estas etiquetas del DOM.
     button.classList.add('hidden');
     popup.classList.add('hidden');
     background.classList.add('hidden');
+    // elimina la clase .body del cuerpo del html.
     body.classList.remove('body');
+    // inicio del audio de intro post presionar el boton comenzar. 
     audiointro.play();
   })
 
-// images storage
+/* funcion que guarda un array (arreglo) que almacena la imagen de las cartas: */
 const backimages = () => {
     images = [
         '<img src="./img/parejas-001.png">',
@@ -39,12 +50,17 @@ const backimages = () => {
     ]
 }
 
-// game generate
+/* funcion para generar el juego, poner de forma aleatoria las cartas o reiniciar el juego si es necesaria: */
 const gamegenerate = () => {
+    // llamado a la funcion que almacena un arreglo con las imagenes.
     backimages();
+    // acceso a la etique con la id game, para ingresar en el las cartas del juego.
     let game = document.querySelector('#game');
+    // creacion un array vacio que posteriormente contendra todas las cartas en parejas.
     var cards = [];
+    // bucle que ingresa las cartas en el array card.
     for (let i = 0; i < 16; i++) {
+        // ingreso de la cartas.
         cards.push(`
         <div class="card-area" onclick="selectcard(${i})">
           <div class="card" id="card${i}">
@@ -52,14 +68,18 @@ const gamegenerate = () => {
             <div class="top face"><img src="./img/tarjeta_cubierta.png" alt=""></div>
           </div>
         </div>`);
+        // cada 2 cartas ingresadas se elimina la primera del arreglo images
         if (i % 2 == 1) {
             images.splice(0, 1);
         }
 
     }
-    cards.sort(() => Math.random() - 0.5)
+    // mezcla las cartas a partir de un math random.
+    cards.sort(() => Math.random() - 0.5);
+    // ingresa todas las cartas en la etiqueta con id game.
     game.innerHTML = cards.join(" ");
 }
+// llamado a la funcion para generar el juego por primera vez.
 gamegenerate();
 
 // array with the selected cards
