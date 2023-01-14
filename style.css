@@ -785,13 +785,13 @@ header img {
 .img-escuela{
     width: 260px;
     height: 47px;
-    margin-bottom: 15px;
+    margin-bottom: 10px;
 }
 
 #btn-reiniciar{
     animation: bounceIn 1.5s backwards;
     font-size: 20px;
-    padding: 5px 1em;
+    padding: 0 1em;
     background-color: #bf0000;
     color: white;
     font-weight: bold;
@@ -841,16 +841,47 @@ header img {
 
 /*  Media para crear el responsive */
 
-@media screen and (max-width: 994px) {
+@media (max-width: 994px) {
 
     .content-column, .content-windown{
         display: grid;
-        grid-template-rows: 60% 1fr;
+        grid-template-rows: 40% 1fr;
         grid-template-columns: 1fr;
     }
 
     .container-modal {
         max-width:500px;  
+      }
+      .column2 {
+        padding: 0;
+        margin-top: 20px;
+        position: relative;
+        top: 60px;
+      }
+}
+
+@media (width < 560px) {
+
+    .content-column, .content-windown{
+        display: grid;
+        grid-template-rows: 40% 1fr;
+        grid-template-columns: 1fr;
+    }
+
+    .container-modal {
+        max-width:500px;  
+      }
+      .column2 {
+        display: flex;
+        justify-content: flex-end;
+        padding: 0;
+        margin-top: 20px;
+        position: relative;
+        top: 0;
+      }
+      #btn-reiniciar {
+        position: relative;
+        top: -25px;
       }
 }
 
